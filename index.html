@@ -36,9 +36,8 @@
       .gratuito-badge { display: inline-flex; align-items: center; background-color: #E0F2FE; color: #075985; font-weight: 500; padding: 4px 10px; border-radius: 9999px; font-size: 0.875rem; border: 1px solid #BAE6FD; }
       .gratuito-badge i { margin-right: 5px; width: 16px; height: 16px;}
       html { scroll-behavior: smooth; }
-      section { scroll-margin-top: 80px; }
-      .section-icon, .beneficio-icon, .quem-item i, .evento-details i { flex-shrink: 0; margin-top: 3px; }
-
+      section { scroll-margin-top: 80px; /* Ajuste para header fixo */ }
+      .section-icon, .beneficio-icon, .quem-item i, .evento-details i, .pilar-icon, .criterio-icon { flex-shrink: 0; margin-top: 3px; }
       /* --- CORREÇÃO CRÍTICA DO LOGO HERO --- */
       /* Filtro invertido para logos em fundo MUITO ESCURO (Hero e Footer) */
       .hero .logos-parceria img, /* Garante que logos DENTRO do hero sejam invertidos */
@@ -64,6 +63,8 @@
             filter: none;
        }
        /* ------------------------------------- */
+       .card-hover-effect { transition: all 0.3s ease-in-out; }
+       .card-hover-effect:hover { border-color: #1e3250; box-shadow: 0 4px 12px rgba(30, 50, 80, 0.1); transform: translateY(-3px); }
 
     </style>
 </head>
@@ -127,21 +128,49 @@
 
     <main class="container mx-auto px-6 py-12 md:py-16 space-y-16 md:space-y-20">
 
-        <!-- Seção O que é o HUB ODS? -->
+        <!-- Seção O que é o HUB ODS? (ATUALIZADA) -->
         <section id="sobre" class="scroll-mt-20">
              <div class="text-center max-w-3xl mx-auto bg-white p-8 md:p-10 rounded-lg shadow-lg border border-gray-200">
                  <div class="p-3 rounded-full bg-[#aecfe6]/30 inline-block mb-4">
                     <i data-feather="compass" class="w-10 h-10 text-[#1e3250]"></i>
                  </div>
                  <h2 class="text-3xl md:text-4xl font-bold mb-4 text-[#1e3250]">O que é o HUB ODS?</h2>
-                 <p class="text-lg text-slate-700 leading-relaxed mb-6">É a plataforma regional do Pacto Global da ONU - Rede Brasil, desenhada para <strong>conectar, capacitar e mobilizar</strong> empresas e organizações locais na jornada pelos 17 Objetivos de Desenvolvimento Sustentável (ODS). Uma rede de <strong>ação local</strong> com impacto global.</p>
-                 <p class="text-lg text-slate-700 leading-relaxed">O Pará se torna o <strong>9º estado brasileiro</strong> a receber um HUB ODS, fortalecendo decisivamente o ecossistema de sustentabilidade na Amazônia e preparando o terreno para a COP30.</p>
-                  <!-- Logo HUB ODS Colorido (CSS garante cor correta) -->
-                  <img src="https://www.pactoglobal.org.br/wp-content/uploads/2025/04/pactocolor.png" alt="Logo Pacto Global HUB ODS" class="h-16 w-auto mx-auto mt-8 opacity-95">
+                 <p class="text-lg text-slate-700 leading-relaxed mb-4">É a plataforma regional do Pacto Global da ONU - Rede Brasil, desenhada para <strong>conectar, capacitar e mobilizar</strong> empresas e organizações locais na jornada pelos 17 Objetivos de Desenvolvimento Sustentável (ODS). Uma rede de <strong>ação local</strong> com impacto global, que potencializa o engajamento regional para o alcance da Agenda 2030.</p>
+                 <p class="text-lg text-slate-700 leading-relaxed mb-4">Atualmente, o programa está presente em 8 estados: Amazonas, Bahia, Ceará, Minas Gerais, Paraná, Pernambuco, Rio de Janeiro e Santa Catarina. O Pará se torna o <strong>9º estado brasileiro</strong> a receber um HUB ODS, fortalecendo decisivamente o ecossistema de sustentabilidade na Amazônia e preparando o terreno para a COP30.</p>
+                 <p class="text-lg text-slate-700 leading-relaxed mb-6">A adesão ao HUB ODS regional é <strong>aberta e gratuita</strong> para participantes e não-participantes do Pacto Global - Rede Brasil. Contudo, é importante ressaltar que ingressar no HUB ODS local é uma experiência complementar e não substitui os benefícios e compromissos da participação formal no Pacto Global.</p>
+                 <!-- CTA Adicionado -->
+                 <a href="[LINK_PACTO_GLOBAL_SITE]" class="cta-button bg-white hover:bg-gray-200 text-[#1e3250] border border-[#1e3250] text-base font-medium py-2 px-5 rounded-full shadow-sm transition duration-300 inline-flex items-center" target="_blank" rel="noopener noreferrer">
+                     <i data-feather="info" class="w-5 h-5 mr-2"></i> Saiba Mais sobre o Pacto Global
+                 </a>
+                 <!-- Logo HUB ODS Colorido (CSS garante cor correta) -->
+                 <img src="https://www.pactoglobal.org.br/wp-content/uploads/2025/04/pactocolor.png" alt="Logo Pacto Global HUB ODS" class="h-16 w-auto mx-auto mt-10 opacity-95">
              </div>
         </section>
 
-        <!-- Seção Pará: Protagonismo -->
+        <!-- NOVA SEÇÃO: O Papel do HUB ODS -->
+        <section id="papel-hub" class="scroll-mt-20 bg-[#aecfe6]/20 p-8 md:p-12 rounded-lg border border-[#aecfe6]/50">
+             <div class="container mx-auto px-6">
+                 <div class="text-center max-w-3xl mx-auto mb-10 md:mb-12">
+                     <div class="p-3 rounded-full bg-[#1e3250]/10 inline-block mb-4">
+                        <i data-feather="target" class="w-10 h-10 text-[#1e3250]"></i>
+                     </div>
+                     <h2 class="text-3xl md:text-4xl font-bold mb-4 text-[#1e3250]">O Papel Fundamental do HUB ODS</h2>
+                     <p class="text-lg text-slate-700 leading-relaxed mb-8">O HUB ODS é o programa do Pacto Global - Rede Brasil que potencializa o engajamento regional das empresas para o alcance dos ODS e a Agenda 2030. Como pilares, os integrantes terão acesso a conhecimento, troca de experiências e boas práticas por meio de:</p>
+                 </div>
+                 <div class="max-w-2xl mx-auto text-left">
+                    <ul class="space-y-4 text-slate-700">
+                        <li class="flex items-start gap-3"><i data-feather="book-open" class="w-5 h-5 text-[#4c6b8b] mt-1 flex-shrink-0"></i><span><strong>Conteúdo Global Qualificado:</strong> Acesso a diretrizes da ONU e materiais sobre a Agenda 2030.</span></li>
+                        <li class="flex items-start gap-3"><i data-feather="award" class="w-5 h-5 text-[#4c6b8b] mt-1 flex-shrink-0"></i><span><strong>Cases Relevantes:</strong> Conhecimento de exemplos práticos e inspiradores de sustentabilidade.</span></li>
+                        <li class="flex items-start gap-3"><i data-feather="tool" class="w-5 h-5 text-[#4c6b8b] mt-1 flex-shrink-0"></i><span><strong>Workshops e Capacitações:</strong> Treinamentos focados nos temas dos ODS e ESG.</span></li>
+                        <li class="flex items-start gap-3"><i data-feather="star" class="w-5 h-5 text-[#4c6b8b] mt-1 flex-shrink-0"></i><span><strong>Eventos de Alto Nível:</strong> Conexão com empresas protagonistas em sustentabilidade na região.</span></li>
+                        <li class="flex items-start gap-3"><i data-feather="users" class="w-5 h-5 text-[#4c6b8b] mt-1 flex-shrink-0"></i><span><strong>Networking Estratégico:</strong> Oportunidade de troca e colaboração com empresas do estado.</span></li>
+                        <li class="flex items-start gap-3"><i data-feather="share-2" class="w-5 h-5 text-[#4c6b8b] mt-1 flex-shrink-0"></i><span><strong>Engajamento da Cadeia de Valor:</strong> Ferramentas e eventos para conscientizar e mobilizar parceiros.</span></li>
+                    </ul>
+                 </div>
+             </div>
+        </section>
+
+        <!-- Seção Pará: Protagonismo (COM CTA) -->
          <section id="para-cop30" class="scroll-mt-20 bg-white p-8 md:p-12 rounded-lg shadow-lg border border-gray-200">
               <div class="text-center max-w-4xl mx-auto">
                    <div class="p-3 rounded-full bg-[#aecfe6]/30 inline-block mb-4">
@@ -149,11 +178,17 @@
                   </div>
                   <h2 class="text-3xl md:text-4xl font-bold mb-4 text-[#1e3250]">Pará: Protagonismo na Agenda Global</h2>
                   <p class="text-lg text-slate-700 leading-relaxed mb-8">No coração da bioeconomia amazônica e futuro palco da <strong>COP30</strong>, o Pará assume uma posição única para liderar a transição para um modelo de desenvolvimento sustentável. O HUB ODS Pará é a ferramenta estratégica para que o setor produtivo e as instituições locais transformem este potencial em <strong>negócios inovadores, impacto social positivo e resiliência climática</strong>.</p>
+                  <!-- CTA Adicionado -->
+                  <div class="mb-10">
+                      <a href="[LINK_PACTO_COP30]" class="cta-button bg-white hover:bg-gray-200 text-[#1e3250] border border-[#1e3250] text-base font-medium py-2 px-5 rounded-full shadow-sm transition duration-300 inline-flex items-center" target="_blank" rel="noopener noreferrer">
+                         <i data-feather="external-link" class="w-5 h-5 mr-2"></i> Conheça o Pacto Rumo à COP30
+                     </a>
+                  </div>
                   <img src="https://www.pactoglobal.org.br/wp-content/uploads/2025/04/IMG_5045-scaled.jpg" alt="Evento Pacto Global - Lideranças e networking no Pará" class="rounded-lg shadow-lg w-full max-w-3xl mx-auto border-4 border-white" loading="lazy">
               </div>
         </section>
 
-        <!-- Seção Aliança Estratégica -->
+        <!-- Seção Aliança Estratégica (COM CTA) -->
         <section id="parceria" class="scroll-mt-20">
             <div class="text-center max-w-3xl mx-auto">
                  <div class="p-3 rounded-full bg-[#aecfe6]/30 inline-block mb-4">
@@ -162,12 +197,16 @@
                  <h2 class="text-3xl md:text-4xl font-bold mb-6 text-[#1e3250]">Aliança Estratégica: Pacto Global + FIEPA</h2>
                  <p class="text-lg text-slate-700 leading-relaxed mb-8">A união da expertise global em sustentabilidade corporativa da ONU (Pacto Global) com a capilaridade e a representatividade industrial da FIEPA no Pará. Uma sinergia poderosa para acelerar a Agenda 2030.</p>
                  <!-- Logos Coloridos (CSS garante cor correta) -->
-                 <div class="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-10 mb-4 p-6">
+                 <div class="flex flex-col sm:flex-row items-center justify-center gap-6 md:gap-10 mb-8 p-6">
                        <img src="https://www.pactoglobal.org.br/wp-content/uploads/2025/04/pactocolor.png" alt="Logo Pacto Global HUB ODS" class="h-14 md:h-16 w-auto">
                        <i data-feather="plus" class="w-6 h-6 md:w-8 md:h-8 text-gray-400"></i>
                        <img src="https://static.wixstatic.com/media/cf72c4_9288d59f9c4341338ab928ffbfa32bb6~mv2.png/v1/fill/w_382,h_108,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/logos%20FIEPA.png" alt="Logo FIEPA" class="h-8 md:h-10 w-auto">
                  </div>
-                  <p class="text-lg text-slate-700 leading-relaxed">Juntos, catalisamos a ação e construímos pontes para um desenvolvimento regional mais justo, próspero e sustentável.</p>
+                  <p class="text-lg text-slate-700 leading-relaxed mb-8">Juntos, catalisamos a ação e construímos pontes para um desenvolvimento regional mais justo, próspero e sustentável.</p>
+                  <!-- CTA Adicionado -->
+                  <a href="[LINK_INSCRICAO_EVENTO_FINAL]" class="cta-button bg-[#1e3250] hover:bg-[#4c6b8b] text-white text-base font-medium py-3 px-6 rounded-full shadow-md transition duration-300 inline-flex items-center" target="_blank" rel="noopener noreferrer">
+                        <i data-feather="arrow-right-circle" class="w-5 h-5 mr-2"></i> Quero Participar do Lançamento
+                    </a>
             </div>
         </section>
 
@@ -182,17 +221,43 @@
                      <p class="text-lg text-slate-700 leading-relaxed">Ao integrar o HUB ODS Pará, sua organização acessa uma rede de benefícios exclusivos:</p>
                  </div>
                  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex items-start gap-4 hover:border-[#1e3250] transition-all duration-300 hover:shadow-xl"> <i data-feather="book-open" class="w-8 h-8 text-[#1e3250] mt-1 flex-shrink-0"></i><div><h3 class="font-semibold text-lg mb-1 text-black">Inteligência ONU/PG</h3><p class="text-sm text-slate-600">Conteúdo global, metodologias e ferramentas adaptadas.</p></div></div>
-                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex items-start gap-4 hover:border-[#1e3250] transition-all duration-300 hover:shadow-xl"> <i data-feather="zap" class="w-8 h-8 text-[#1e3250] mt-1 flex-shrink-0"></i><div><h3 class="font-semibold text-lg mb-1 text-black">Capacitações</h3><p class="text-sm text-slate-600">Workshops e treinamentos aplicados em ODS e ESG.</p></div></div>
-                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex items-start gap-4 hover:border-[#1e3250] transition-all duration-300 hover:shadow-xl"> <i data-feather="users" class="w-8 h-8 text-[#1e3250] mt-1 flex-shrink-0"></i><div><h3 class="font-semibold text-lg mb-1 text-black">Networking Qualificado</h3><p class="text-sm text-slate-600">Conexão com líderes e decisores do ecossistema paraense.</p></div></div>
-                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex items-start gap-4 hover:border-[#1e3250] transition-all duration-300 hover:shadow-xl"> <i data-feather="trending-up" class="w-8 h-8 text-[#1e3250] mt-1 flex-shrink-0"></i><div><h3 class="font-semibold text-lg mb-1 text-black">Visibilidade Positiva</h3><p class="text-sm text-slate-600">Plataforma para destacar suas boas práticas e liderança.</p></div></div>
-                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex items-start gap-4 hover:border-[#1e3250] transition-all duration-300 hover:shadow-xl"> <i data-feather="share-2" class="w-8 h-8 text-[#1e3250] mt-1 flex-shrink-0"></i><div><h3 class="font-semibold text-lg mb-1 text-black">Engajamento da Cadeia</h3><p class="text-sm text-slate-600">Apoio e ferramentas para mobilizar seus parceiros.</p></div></div>
-                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex items-start gap-4 hover:border-[#1e3250] transition-all duration-300 hover:shadow-xl"> <i data-feather="shield" class="w-8 h-8 text-[#1e3250] mt-1 flex-shrink-0"></i><div><h3 class="font-semibold text-lg mb-1 text-black">Gestão & Oportunidades</h3><p class="text-sm text-slate-600">Alinhe-se às demandas ESG e antecipe tendências de mercado.</p></div></div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex items-start gap-4 card-hover-effect"> <i data-feather="book-open" class="w-8 h-8 text-[#1e3250] mt-1 flex-shrink-0 beneficio-icon"></i><div><h3 class="font-semibold text-lg mb-1 text-black">Inteligência ONU/PG</h3><p class="text-sm text-slate-600">Conteúdo global, metodologias e ferramentas adaptadas.</p></div></div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex items-start gap-4 card-hover-effect"> <i data-feather="zap" class="w-8 h-8 text-[#1e3250] mt-1 flex-shrink-0 beneficio-icon"></i><div><h3 class="font-semibold text-lg mb-1 text-black">Capacitações</h3><p class="text-sm text-slate-600">Workshops e treinamentos aplicados em ODS e ESG.</p></div></div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex items-start gap-4 card-hover-effect"> <i data-feather="users" class="w-8 h-8 text-[#1e3250] mt-1 flex-shrink-0 beneficio-icon"></i><div><h3 class="font-semibold text-lg mb-1 text-black">Networking Qualificado</h3><p class="text-sm text-slate-600">Conexão com líderes e decisores do ecossistema paraense.</p></div></div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex items-start gap-4 card-hover-effect"> <i data-feather="trending-up" class="w-8 h-8 text-[#1e3250] mt-1 flex-shrink-0 beneficio-icon"></i><div><h3 class="font-semibold text-lg mb-1 text-black">Visibilidade Positiva</h3><p class="text-sm text-slate-600">Plataforma para destacar suas boas práticas e liderança.</p></div></div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex items-start gap-4 card-hover-effect"> <i data-feather="share-2" class="w-8 h-8 text-[#1e3250] mt-1 flex-shrink-0 beneficio-icon"></i><div><h3 class="font-semibold text-lg mb-1 text-black">Engajamento da Cadeia</h3><p class="text-sm text-slate-600">Apoio e ferramentas para mobilizar seus parceiros.</p></div></div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex items-start gap-4 card-hover-effect"> <i data-feather="shield" class="w-8 h-8 text-[#1e3250] mt-1 flex-shrink-0 beneficio-icon"></i><div><h3 class="font-semibold text-lg mb-1 text-black">Gestão & Oportunidades</h3><p class="text-sm text-slate-600">Alinhe-se às demandas ESG e antecipe tendências de mercado.</p></div></div>
                  </div>
              </div>
         </section>
 
-         <!-- Seção Quem Pode Participar -->
+        <!-- NOVA SEÇÃO: Pilares do HUB ODS Pará -->
+        <section id="pilares-hub" class="scroll-mt-20 bg-white p-8 md:p-12 rounded-lg shadow-lg border border-gray-200">
+             <div class="container mx-auto px-6">
+                 <div class="text-center max-w-3xl mx-auto mb-10 md:mb-12">
+                     <div class="p-3 rounded-full bg-[#aecfe6]/30 inline-block mb-4">
+                        <i data-feather="layers" class="w-10 h-10 text-[#1e3250]"></i>
+                     </div>
+                     <h2 class="text-3xl md:text-4xl font-bold mb-4 text-[#1e3250]">Pilares do HUB ODS Pará: Conhecimento, Conexão e Ação</h2>
+                     <p class="text-lg text-slate-700 leading-relaxed">Nossa atuação se baseia em pilares sólidos para impulsionar a Agenda 2030 na região:</p>
+                 </div>
+                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-10">
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 flex items-start gap-4 card-hover-effect"><i data-feather="book-open" class="w-8 h-8 text-[#1e3250] pilar-icon"></i><div><h3 class="font-semibold text-lg mb-1 text-black">Conteúdo Global Adaptado</h3><p class="text-sm text-slate-600">Acesso à inteligência ONU com foco regional.</p></div></div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 flex items-start gap-4 card-hover-effect"><i data-feather="message-square" class="w-8 h-8 text-[#1e3250] pilar-icon"></i><div><h3 class="font-semibold text-lg mb-1 text-black">Troca de Experiências</h3><p class="text-sm text-slate-600">Compartilhamento de boas práticas e desafios.</p></div></div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 flex items-start gap-4 card-hover-effect"><i data-feather="users" class="w-8 h-8 text-[#1e3250] pilar-icon"></i><div><h3 class="font-semibold text-lg mb-1 text-black">Networking Estratégico</h3><p class="text-sm text-slate-600">Conexões valiosas no ecossistema local.</p></div></div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 flex items-start gap-4 card-hover-effect"><i data-feather="tool" class="w-8 h-8 text-[#1e3250] pilar-icon"></i><div><h3 class="font-semibold text-lg mb-1 text-black">Workshops & Capacitações</h3><p class="text-sm text-slate-600">Desenvolvimento de habilidades em ODS e ESG.</p></div></div>
+                    <div class="bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 flex items-start gap-4 card-hover-effect"><i data-feather="zap" class="w-8 h-8 text-[#1e3250] pilar-icon"></i><div><h3 class="font-semibold text-lg mb-1 text-black">Fomento à Ação</h3><p class="text-sm text-slate-600">Estímulo a projetos e engajamento da cadeia.</p></div></div>
+                 </div>
+                 <!-- CTA Adicionado -->
+                 <div class="text-center">
+                    <a href="[LINK_CADASTRO_HUB_FINAL]" class="cta-button bg-white hover:bg-gray-200 text-[#1e3250] border border-[#1e3250] text-base font-medium py-2 px-5 rounded-full shadow-sm transition duration-300 inline-flex items-center" target="_blank" rel="noopener noreferrer">
+                       <i data-feather="plus-circle" class="w-5 h-5 mr-2"></i> Quero Saber Mais e Aderir
+                    </a>
+                 </div>
+             </div>
+        </section>
+
+         <!-- Seção Quem Pode Participar (COM CTA) -->
          <section id="quem-pode" class="scroll-mt-20 bg-white p-8 md:p-12 rounded-lg shadow-lg border border-gray-200">
             <div class="text-center max-w-4xl mx-auto">
                 <div class="p-3 rounded-full bg-[#1e3250]/10 inline-block mb-4">
@@ -201,19 +266,23 @@
                 <h2 class="text-3xl md:text-4xl font-bold mb-4 text-[#1e3250]">Quem Pode Integrar?</h2>
                 <p class="text-lg text-slate-700 leading-relaxed mb-8">O HUB ODS Pará é um <strong>ecossistema aberto e multissetorial</strong>, focado em unir forças para acelerar a Agenda 2030 no estado:</p>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-8">
-                   <div class="flex flex-col items-center text-center bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow"><i data-feather="briefcase" class="w-10 h-10 mb-3 text-[#1e3250]"></i><span class="font-medium text-black">Empresas</span><p class="text-xs text-slate-500 mt-1">(Participantes ou não do Pacto Global)</p></div>
-                   <div class="flex flex-col items-center text-center bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow"><i data-feather="globe" class="w-10 h-10 mb-3 text-[#1e3250]"></i><span class="font-medium text-black">Organizações Sociais</span></div>
-                   <div class="flex flex-col items-center text-center bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow"><i data-feather="users" class="w-10 h-10 mb-3 text-[#1e3250]"></i><span class="font-medium text-black">Associações & Sindicatos</span></div>
-                   <div class="flex flex-col items-center text-center bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow"><i data-feather="book" class="w-10 h-10 mb-3 text-[#1e3250]"></i><span class="font-medium text-black">Academia & Pesquisa</span></div>
-                   <div class="flex flex-col items-center text-center bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow"><i data-feather="flag" class="w-10 h-10 mb-3 text-[#1e3250]"></i><span class="font-medium text-black">Setor Público</span></div>
-                   <div class="flex flex-col items-center text-center bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 hover:shadow-md transition-shadow"><i data-feather="aperture" class="w-10 h-10 mb-3 text-[#1e3250]"></i><span class="font-medium text-black">Outros Stakeholders</span></div>
+                   <div class="flex flex-col items-center text-center bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 card-hover-effect"><i data-feather="briefcase" class="w-10 h-10 mb-3 text-[#1e3250]"></i><span class="font-medium text-black">Empresas</span><p class="text-xs text-slate-500 mt-1">(Participantes ou não do Pacto Global)</p></div>
+                   <div class="flex flex-col items-center text-center bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 card-hover-effect"><i data-feather="globe" class="w-10 h-10 mb-3 text-[#1e3250]"></i><span class="font-medium text-black">Organizações Sociais</span></div>
+                   <div class="flex flex-col items-center text-center bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 card-hover-effect"><i data-feather="users" class="w-10 h-10 mb-3 text-[#1e3250]"></i><span class="font-medium text-black">Associações & Sindicatos</span></div>
+                   <div class="flex flex-col items-center text-center bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 card-hover-effect"><i data-feather="book" class="w-10 h-10 mb-3 text-[#1e3250]"></i><span class="font-medium text-black">Academia & Pesquisa</span></div>
+                   <div class="flex flex-col items-center text-center bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 card-hover-effect"><i data-feather="flag" class="w-10 h-10 mb-3 text-[#1e3250]"></i><span class="font-medium text-black">Setor Público</span></div>
+                   <div class="flex flex-col items-center text-center bg-gray-50 p-6 rounded-lg shadow-sm border border-gray-200 card-hover-effect"><i data-feather="aperture" class="w-10 h-10 mb-3 text-[#1e3250]"></i><span class="font-medium text-black">Outros Stakeholders</span></div>
                </div>
                 <p class="mb-4"><span class="gratuito-badge"><i data-feather="dollar-sign"></i> Adesão GRATUITA ao HUB ODS Pará</span></p>
-                <p class="text-sm text-gray-500 italic">*A participação no HUB ODS é complementar e não substitui os benefícios e compromissos da participação formal no Pacto Global da ONU - Rede Brasil.</p>
+                <p class="text-sm text-gray-500 italic mb-8">*A participação no HUB ODS é complementar e não substitui os benefícios e compromissos da participação formal no Pacto Global da ONU - Rede Brasil.</p>
+                 <!-- CTA Adicionado -->
+                 <a href="[LINK_CADASTRO_HUB_FINAL]" class="cta-button bg-[#1e3250] hover:bg-[#4c6b8b] text-white text-base font-medium py-3 px-6 rounded-full shadow-md transition duration-300 inline-flex items-center" target="_blank" rel="noopener noreferrer">
+                       <i data-feather="user-plus" class="w-5 h-5 mr-2"></i> Quero Aderir ao HUB ODS Pará
+                    </a>
             </div>
         </section>
 
-        <!-- Seção Evento de Lançamento (REDESENHADA com Paleta Restrita) -->
+        <!-- Seção Evento de Lançamento -->
         <section id="evento" class="scroll-mt-20 bg-[#1e3250] text-white p-8 md:p-16 rounded-lg shadow-xl my-16 md:my-20">
             <div class="container mx-auto px-6">
                 <div class="text-center max-w-3xl mx-auto mb-10 md:mb-12">
@@ -226,9 +295,9 @@
                 <div class="bg-white text-black p-6 md:p-10 rounded-lg shadow-2xl max-w-3xl mx-auto border-t-4 border-[#699cc6]">
                     <h3 class="text-xl font-bold mb-6 text-center text-[#1e3250]">Junte-se a Nós!</h3>
                     <div class="space-y-5 mb-8">
-                        <p class="flex items-center text-lg text-[#4c6b8b]"><i data-feather="calendar" class="w-6 h-6 mr-4 text-[#4c6b8b] flex-shrink-0"></i><strong class="text-slate-900 mr-1">Data:</strong> 29 de Maio de 2025</p>
-                        <p class="flex items-center text-lg text-[#4c6b8b]"><i data-feather="clock" class="w-6 h-6 mr-4 text-[#4c6b8b] flex-shrink-0"></i><strong class="text-slate-900 mr-1">Horário:</strong> 14h30 às 18h00</p>
-                        <p class="flex items-center text-lg text-[#4c6b8b]"><i data-feather="map-pin" class="w-6 h-6 mr-4 text-[#4c6b8b] flex-shrink-0"></i><strong class="text-slate-900 mr-1">Local:</strong> SEDE DA FIEPA, Belém - PA</p>
+                        <p class="flex items-center text-lg text-[#4c6b8b]"><i data-feather="calendar" class="w-6 h-6 mr-4 text-[#4c6b8b] flex-shrink-0 evento-details"></i><strong class="text-slate-900 mr-1">Data:</strong> 29 de Maio de 2025</p>
+                        <p class="flex items-center text-lg text-[#4c6b8b]"><i data-feather="clock" class="w-6 h-6 mr-4 text-[#4c6b8b] flex-shrink-0 evento-details"></i><strong class="text-slate-900 mr-1">Horário:</strong> 14h30 às 18h00</p>
+                        <p class="flex items-center text-lg text-[#4c6b8b]"><i data-feather="map-pin" class="w-6 h-6 mr-4 text-[#4c6b8b] flex-shrink-0 evento-details"></i><strong class="text-slate-900 mr-1">Local:</strong> SEDE DA FIEPA, Belém - PA</p>
                     </div>
                      <details class="border border-gray-300 rounded-md p-4 mb-8 group bg-gray-50">
                        <summary class="font-semibold text-base cursor-pointer flex justify-between items-center text-slate-700 group-hover:text-[#1e3250]">
@@ -251,6 +320,34 @@
                </div>
            </div>
        </section>
+
+        <!-- NOVA SEÇÃO: Critérios para Criação de HUBs ODS -->
+        <section id="criterios-hubs" class="scroll-mt-20 bg-[#aecfe6]/20 p-8 md:p-12 rounded-lg border border-[#aecfe6]/50">
+             <div class="container mx-auto px-6">
+                 <div class="text-center max-w-3xl mx-auto mb-10 md:mb-12">
+                     <div class="p-3 rounded-full bg-[#1e3250]/10 inline-block mb-4">
+                        <i data-feather="check-square" class="w-10 h-10 text-[#1e3250]"></i>
+                     </div>
+                     <h2 class="text-3xl md:text-4xl font-bold mb-4 text-[#1e3250]">Como um HUB ODS é Criado em Outros Estados?</h2>
+                     <p class="text-lg text-slate-700 leading-relaxed mb-6">Organizações com relevância regional e reconhecidas por sua atuação em sustentabilidade podem se tornar parceiras exclusivas do Pacto Global - Rede Brasil para implementar um HUB ODS em seu estado (uma por estado).</p>
+                     <p class="text-lg text-slate-700 leading-relaxed mb-10">Para a seleção dos parceiros, consideramos os seguintes critérios:</p>
+                 </div>
+                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-10">
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex flex-col items-center text-center card-hover-effect"> <i data-feather="award" class="w-10 h-10 mb-3 text-[#1e3250] criterio-icon"></i><h3 class="font-semibold text-lg mb-1 text-black">Reputação Positiva</h3><p class="text-sm text-slate-600">Reconhecimento e credibilidade na região.</p></div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex flex-col items-center text-center card-hover-effect"> <i data-feather="message-circle" class="w-10 h-10 mb-3 text-[#1e3250] criterio-icon"></i><h3 class="font-semibold text-lg mb-1 text-black">Interlocução Empresarial</h3><p class="text-sm text-slate-600">Alto nível de diálogo com o setor privado local.</p></div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex flex-col items-center text-center card-hover-effect"> <i data-feather="map" class="w-10 h-10 mb-3 text-[#1e3250] criterio-icon"></i><h3 class="font-semibold text-lg mb-1 text-black">Capilaridade Estadual</h3><p class="text-sm text-slate-600">Alcance e presença em todo o território.</p></div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex flex-col items-center text-center card-hover-effect"> <i data-feather="compass" class="w-10 h-10 mb-3 text-[#1e3250] criterio-icon"></i><h3 class="font-semibold text-lg mb-1 text-black">Alinhamento Estratégico</h3><p class="text-sm text-slate-600">Sintonia com os valores e objetivos do Pacto Global.</p></div>
+                    <div class="bg-white p-6 rounded-lg shadow-md border border-gray-200 flex flex-col items-center text-center card-hover-effect"> <i data-feather="settings" class="w-10 h-10 mb-3 text-[#1e3250] criterio-icon"></i><h3 class="font-semibold text-lg mb-1 text-black">Estrutura de Articulação</h3><p class="text-sm text-slate-600">Capacidade de mobilizar e organizar eventos/reuniões.</p></div>
+                 </div>
+                 <div class="text-center">
+                     <p class="text-lg text-slate-800 mb-4">Tem interesse em ser um parceiro regional em outro estado?</p>
+                     <!-- CTA Adicionado -->
+                     <a href="mailto:hubods@pactoglobal.org.br" class="cta-button bg-white hover:bg-gray-200 text-[#1e3250] border border-[#1e3250] text-base font-medium py-2 px-5 rounded-full shadow-sm transition duration-300 inline-flex items-center">
+                        <i data-feather="mail" class="w-5 h-5 mr-2"></i> Entre em Contato: hubods@pactoglobal.org.br
+                     </a>
+                 </div>
+             </div>
+        </section>
 
         <!-- Seção CTA Final -->
         <section id="participe" class="scroll-mt-20 text-center mb-16 md:mb-20">
@@ -296,7 +393,8 @@
 
       // --- Contagem Regressiva ---
       const countdownElement = document.getElementById('countdown');
-      const eventDate = new Date(2025, 4, 29, 14, 30, 0).getTime(); // Maio = mês 4
+      // **ATENÇÃO:** Mês em JavaScript Date() é 0-indexado (Janeiro=0, Maio=4)
+      const eventDate = new Date(2025, 4, 29, 14, 30, 0).getTime(); // Ano, Mês (0-11), Dia, Hora, Minuto, Segundo
 
       function updateCountdown() {
           const now = new Date().getTime();
@@ -304,7 +402,7 @@
           if (!countdownElement) return;
 
           if (distance < 0) {
-              countdownElement.innerHTML = "<span class='text-yellow-300'>Evento Iniciado!</span>";
+              countdownElement.innerHTML = "<span class='text-yellow-300 font-semibold'>EVENTO EM ANDAMENTO!</span>";
               if (typeof interval !== 'undefined') clearInterval(interval);
               return;
           }
@@ -312,12 +410,36 @@
           const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
           const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
           const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-          countdownElement.innerHTML = `Faltam: <strong class="text-white">${days}d</strong> <strong class="text-white">${hours.toString().padStart(2, '0')}h</strong> <strong class="text-white">${minutes.toString().padStart(2, '0')}m</strong> <strong class="text-white">${seconds.toString().padStart(2, '0')}s</strong>`;
+          // Estilo ajustado para melhor leitura
+          countdownElement.innerHTML = `Faltam: <strong class="text-white text-lg mx-1">${days}d</strong> <strong class="text-white text-lg mx-1">${hours.toString().padStart(2, '0')}h</strong> <strong class="text-white text-lg mx-1">${minutes.toString().padStart(2, '0')}m</strong> <strong class="text-white text-lg mx-1">${seconds.toString().padStart(2, '0')}s</strong>`;
       }
       if (countdownElement) {
-         updateCountdown();
-         var interval = setInterval(updateCountdown, 1000);
+         updateCountdown(); // Run immediately
+         var interval = setInterval(updateCountdown, 1000); // Update every second
       }
+
+      // Smooth scroll for anchor links (redundant if html { scroll-behavior: smooth; } is set, but good fallback)
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+          anchor.addEventListener('click', function (e) {
+              const hrefAttribute = this.getAttribute('href');
+              // Check if it's not just '#'
+              if (hrefAttribute && hrefAttribute.length > 1) {
+                  const targetElement = document.querySelector(hrefAttribute);
+                  if (targetElement) {
+                      e.preventDefault();
+                      // Consider header height for accurate scroll position
+                      const headerOffset = 80; // Height of the sticky header
+                      const elementPosition = targetElement.getBoundingClientRect().top;
+                      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+                      window.scrollTo({
+                          top: offsetPosition,
+                          behavior: "smooth"
+                      });
+                  }
+              }
+          });
+      });
     </script>
 </body>
 </html>
